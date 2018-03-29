@@ -1,0 +1,55 @@
+* Intro
+
+This repository contains a submodule to record which [[https://github.com/fastai/fastai.git][fast.ai]] commit
+was used for a given lesson.  When you clone this repository, don't
+forget to
+#+BEGIN_SRC shell :exports code
+  git submodule init
+  git submodule update
+#+END_SRC
+
+* [[http://course.fast.ai/lessons/lesson1.html][Lesson 1]] of deep learning course
+
+There's also a fast.ai machine learning course (Where?)
+
+After training a model, look at the overall metrics, and at examples
+of each of (see also [[file:fastai/fastai/plots.py::class%20ImageModelResults():][ImageModelResults]]):
+1. A few correct labels at random
+2. A few incorrect labels at random
+3. The most correct labels of each class (ie those with highest probability that are correct)
+4. The most incorrect labels of each class (ie those with highest probability that are incorrect)
+5. The most uncertain labels (ie those with probability closest to 0.5).
+
+** [[https://arxiv.org/abs/1506.01186][Cyclical Learning Rates for Training Neural Networks]]
+- Epoch :: all training examples seen once (example from paper: an
+           epoch is calculated by dividing the number of training
+           images by the batchsize used.  For example, CIFAR-10 has
+           50000 training images and the batchsize is 100 so an epoch
+           = 50000 / 100 = 500 iterations).
+
+           From [[https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9][towardsdatascience]]: One Epoch is when an ENTIRE
+           dataset is passed forward and backward through the neural
+           network only ONCE.
+- Batch size :: From [[https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9][towardsdatascience]]: number of training examples
+                present in a single batch.
+- Iterations :: From [[https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9][towardsdatascience]]: number of batches needed to
+                complete one epoch.
+
+** fastai machine                                                     :crypt:
+-----BEGIN PGP MESSAGE-----
+
+jA0EBwMCDZOjgvc8GG9g0ukBvAyyS3SVq42F+VAyCTWibV8yPhHIziNnxsUmUZOf
+SpOkN2hDAN4MrtZbYbqAn1A11NFHeQ4wbepK9s78MAf9IQfjbb/g8+tIsRvhoQkL
+sesGtB/vT60Fd6UT9r9OH7ygn6eCFPgnK/96IMMnxDYaecyQMWnPNKboAn43QRn8
+kwKkY+XogRC9aIq2k6yiwW9go7gAe8sRsMt+YR23yAOEq1emcd3jzA96HXZPb/1E
+l2PQfuLZXkZINHlgRSSb6FikbBslAXAe2pnsbhQFBB9tTlbNrAqQzdUMKcQCDNOz
+BsJnabC1+qHwWYBvhYZcgrF2FsfwGmDrAD2pblgaUw6VYGNlvKDQjNzD+gLL6rVc
+dMkrUiNBvt/AqUOScpkgP5UwCdsHBloAmehl6EYSnkvii81F44PPFNsvM8srE1MS
+OBrTZuxT4xNOmYlQZRX8B1TyFcgz82d6Q4m3F4dDukuP5qCeEW/a6YcGSI+QfyDW
+94oIDo/x6y1m5X2NLFhHVzjrL5JOHTHEcxNPKo7QuYFzHh/OAY7btQhDOpAsjhdr
+7VGFHmMSdAF0c9HUhqhh35LlYB9mXtLALy91HOtt1gzlLIRF39YVZO4sO1HXXNlq
+1DL+Ut688TqA54J9S5mdNykshUMf4I87aFDQUis1zXyc2aTNt+79SThpoyW0AMhS
+BzGa4BYjvRy80rsiBUeu2EUwjVNw9a6SgDCkYMAVWueHJm9F/lPt9hVHbmLYtrwZ
+/Wjz
+=9StH
+-----END PGP MESSAGE-----
