@@ -59,3 +59,26 @@ Made a dataset with flowers (not sure about copyrights so I won't
 upload it to GitHub).
 
 See also [[file+emacs:lesson1-exercise.ipynb][lesson1-exercise]] (Jupyter Notebook)
+
+* Exercise for lesson2: dog breed identification
+** Kaggle                                                             :crypt:
+-----BEGIN PGP MESSAGE-----
+
+jA0EBwMCnaW+0UWTH/5g0msBPOzALsYYxVoZRsdpGr8ocYs2eBZsf1SZ1EbyV29u
+klg7R6f9bMwxMj4ykIWy8I+fgwkrxOL3Kzjb8EJFWwUrn5wI1BnmBdxDYKPGHvxe
+Z8NigzQiCZMBaQaUHwbQ/uYeJe+LIBLpQnknuQ==
+=MfH7
+-----END PGP MESSAGE-----
+
+** [[https://www.kaggle.com/c/dog-breed-identification][Dog breed identification]]
+#+BEGIN_SRC shell :exports code
+  kaggle competitions download -c dog-breed-identification
+  cd $HOME/data
+  mkdir dogbreed
+  unzip -d dogbreed $HOME/.kaggle/competitions/dog-breed-identification/test.zip
+  unzip -d dogbreed $HOME/.kaggle/competitions/dog-breed-identification/train.zip
+  unzip -d dogbreed $HOME/.kaggle/competitions/dog-breed-identification/labels.csv.zip
+#+END_SRC
+Puts zip files in
+~$HOME/.kaggle/competitions/dog-breed-identification~ and unzip in our
+data folder.
