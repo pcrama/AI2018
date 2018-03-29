@@ -53,3 +53,9 @@ BzGa4BYjvRy80rsiBUeu2EUwjVNw9a6SgDCkYMAVWueHJm9F/lPt9hVHbmLYtrwZ
 /Wjz
 =9StH
 -----END PGP MESSAGE-----
+
+** Exercise 1
+Made a dataset with flowers (not sure about copyrights so I won't
+upload it to GitHub).
+
+See also [[file+emacs:lesson1-exercise.ipynb][lesson1-exercise]] (Jupyter Notebook)
