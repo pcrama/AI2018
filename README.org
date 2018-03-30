@@ -61,6 +61,9 @@ upload it to GitHub).
 See also [[file+emacs:lesson1-exercise.ipynb][lesson1-exercise]] (Jupyter Notebook)
 
 * Exercise for lesson2: dog breed identification
+- [[http://forums.fast.ai/t/wiki-lesson-2/9399][Wiki link]]
+- [[http://files.fast.ai/models/weights.tgz][Pretrained models]] (e.g. resnext_101_64x4d)
+
 ** Kaggle                                                             :crypt:
 -----BEGIN PGP MESSAGE-----
 
@@ -82,3 +85,19 @@ Z8NigzQiCZMBaQaUHwbQ/uYeJe+LIBLpQnknuQ==
 Puts zip files in
 ~$HOME/.kaggle/competitions/dog-breed-identification~ and unzip in our
 data folder.
+
+* Common code snippets
+** Initialization
+#+BEGIN_EXAMPLE
+  %reload_ext autoreload
+  %autoreload 2
+  %matplotlib inline
+  from fastai.imports import *
+  from fastai.torch_imports import *
+  from fastai.transforms import *
+  from fastai.conv_learner import *
+  from fastai.model import *
+  from fastai.dataset import *
+  from fastai.sgdr import *
+  from fastai.plots import *
+#+END_EXAMPLE
