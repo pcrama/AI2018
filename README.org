@@ -86,6 +86,24 @@ Puts zip files in
 ~$HOME/.kaggle/competitions/dog-breed-identification~ and unzip in our
 data folder.
 
+* [[http://course.fast.ai/lessons/lesson3.html][Lesson 3]]
+** softmax vs sigmoid
+*** Softmax
+Use for single label classification: goal is to have activation
+function interpretable as probability (0 <= p <= 1, sum to 1).
+
+Take all outputs, exponentiate them.  Then each exponentiated output
+is normalized by the sum.
+*** sigmoid
+Use for multi-label classification: goal is to have activation
+functions between 0 and 1.
+
+sigmoid(x) = e(x) / (1 + e(x))
+
+
+
+[2018-04-20 Fri] got to 1:59:58
+
 * Common code snippets
 ** Initialization
 #+BEGIN_EXAMPLE
