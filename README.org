@@ -86,6 +86,9 @@ Puts zip files in
 ~$HOME/.kaggle/competitions/dog-breed-identification~ and unzip in our
 data folder.
 
+** Summary recommended by instructor
+https://medium.com/@apiltamang/case-study-a-world-class-image-classifier-for-dogs-and-cats-err-anything-9cf39ee4690e
+
 * [[http://course.fast.ai/lessons/lesson3.html][Lesson 3]]
 ** softmax vs sigmoid
 *** Softmax
@@ -100,9 +103,13 @@ functions between 0 and 1.
 
 sigmoid(x) = e(x) / (1 + e(x))
 
+** AWS setup
+See [[https://www.youtube.com/watch?v=9C06ZPF8Uuc&feature=player_embedded][start of video]] or [[https://github.com/reshamas/fastai_deeplearn_part1/blob/master/tools/aws_ami_gpu_setup.md][reshamas:aws_ami_gpu_setup.md]].
 
+** Panda library
+Recommended book: [[http://wesmckinney.com/pages/book.html][Python for Data Analysis Book]] ([[http://amzn.to/2vvBijB][Amazon]]) 2nd edition.
 
-[2018-04-20 Fri] got to 1:59:58
+* Lesson 4
 
 * Common code snippets
 ** Initialization
