@@ -111,6 +111,41 @@ Recommended book: [[http://wesmckinney.com/pages/book.html][Python for Data Anal
 
 * Lesson 4
 
+** Cool techniques to improve models
+*** [[https://arxiv.org/abs/1704.00109][Snapshot Ensembles: Train 1, get M for free]]
+Cited in [[https://techburst.io/improving-the-way-we-work-with-learning-rate-5e99554f163b][Improving the way we work with learning rate]].
+*** [[https://towardsdatascience.com/stochastic-weight-averaging-a-new-way-to-get-state-of-the-art-results-in-deep-learning-c639ccf36a][Stochastic Weight Averaging]]
+Instead of taking snapshots and ensembling them (previous link), keep
+a running average of them.
+
+* [[http://forums.fast.ai/t/wiki-lesson-4/9402][Lesson 4]]
+- [[https://medium.com/@hiromi_suenaga/deep-learning-2-part-1-lesson-4-2048a26d58aa][Deep Learning 2: Part 1 Lesson 4 – Transcript by Hiromi Suenaga]]
+** Part 1: Structured data (predicting sales) up to 1h20m
+*** Data
+See [[https://www.youtube.com/watch?v=9C06ZPF8Uuc&feature=youtu.be][lesson 3 (around 2h06)]]:
+#+BEGIN_SRC shell :exports code
+  wget http://files.fast.ai/part2/lesson14/rossman.tgz
+#+END_SRC
+*** Dropout (around 0h10)
+Reduce risk of overfitting: each minibatch throws out different
+activations with a given probability.
+
+Dropout is disabled (only?) in fast.ai while computing loss for
+validation set: this is why in the early stages of training,
+validation loss can be lower than training loss.
+
+Dropout needs to rescale activations to preserve meaning: assuming
+dropout probability=0.5, the output would only be half of what is was
+before, leading subsequent layers to believe that a feature is present
+for a lower threshold.  This leads to problems when using the model in
+prediction (i.e. without dropout).
+*** [[http://www.fast.ai/2017/11/13/validation-sets/][Choosing a validation set]]
+For time dependent data, normally the application wants to predict
+recent data from past observations, so the validation set is best
+chosen as the most recent training data available.
+
+** Part 2: 1h20m36s
+
 * Common code snippets
 ** Initialization
 #+BEGIN_EXAMPLE
