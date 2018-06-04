@@ -106,10 +106,10 @@ sigmoid(x) = e(x) / (1 + e(x))
 ** AWS setup
 See [[https://www.youtube.com/watch?v=9C06ZPF8Uuc&feature=player_embedded][start of video]] or [[https://github.com/reshamas/fastai_deeplearn_part1/blob/master/tools/aws_ami_gpu_setup.md][reshamas:aws_ami_gpu_setup.md]].
 
-** Panda library
+** TODO Panda library
 Recommended book: [[http://wesmckinney.com/pages/book.html][Python for Data Analysis Book]] ([[http://amzn.to/2vvBijB][Amazon]]) 2nd edition.
 
-* Lesson 4
+Check if I can get it once I have the ACM membership.
 
 ** Cool techniques to improve models
 *** [[https://arxiv.org/abs/1704.00109][Snapshot Ensembles: Train 1, get M for free]]
@@ -145,6 +145,7 @@ recent data from past observations, so the validation set is best
 chosen as the most recent training data available.
 
 ** Part 2: 1h20m36s
+See paper [[https://arxiv.org/abs/1604.06737][Entity Embeddings of Categorical Variables]]
 
 * Common code snippets
 ** Initialization
