@@ -147,6 +147,51 @@ chosen as the most recent training data available.
 ** Part 2: 1h20m36s
 See paper [[https://arxiv.org/abs/1604.06737][Entity Embeddings of Categorical Variables]]
 
+** Predicting sales data (Kaggle playground)
+See [[file:future-sales-prediction.ipynb][Jupyter Notebook]].
+
+To get my statistics right, I needed to complete the sales data with
+explicit `0 sales' rows for each missing shop × item × date_block_num
+combination.  I first tried using nested for loops to detect and
+append missing rows, but that was too slow.  The snippet below,
+creates a table containing all shop × item combinations with a sale
+amount of 0, then overwrites the 0 with the actual sales data where
+appropriate.
+#+BEGIN_SRC python :exports code
+  import pandas as pd
+
+  import itertools
+
+  ITEM_IDS = [1, 2, 4, 5]
+  SHOP_IDS = [10, 11, 15]
+
+  def df_crossjoin(df1, df2, **kwargs):
+      # Adapted from
+      # https://mkonrad.net/2016/04/16/cross-join--cartesian-product-between-pandas-dataframes.html
+      df1['_tmpkey'] = 1
+      df2['_tmpkey'] = 1
+
+      res = pd.merge(df1, df2, on='_tmpkey', **kwargs).drop('_tmpkey', axis=1)
+
+      df1.drop('_tmpkey', axis=1, inplace=True)
+      df2.drop('_tmpkey', axis=1, inplace=True)
+
+      return res
+
+  items = pd.DataFrame({'item_id': ITEM_IDS})
+  shops = pd.DataFrame({'shop_id': SHOP_IDS})
+  itsh = df_crossjoin(items, shops)
+  itsh['sales'] = 0
+  real_sales = pd.DataFrame({'item_id': [1, 4, 5, 4, 1]
+                            ,'shop_id': [10, 11, 15, 10, 11]
+                            ,'sales': [1, 2, 3, 4, -1]}
+                           )
+  real_sales.set_index(['item_id', 'shop_id'], inplace=True)
+  itsh.set_index(['item_id', 'shop_id'], inplace=True)
+  itsh.update(real_sales)
+
+  display(itsh)
+#+END_SRC
 * Common code snippets
 ** Initialization
 #+BEGIN_EXAMPLE
